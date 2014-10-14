@@ -1,6 +1,33 @@
 /* */
 
 body {
-   background-image: url('background.png');
+  /* background-image: url('background.png'); */
   /* background: #c1b7ff; */
+  width: 90%;
+  overflow: hidden;
+  margin: 0em;
+}
+
+#header {
+  overflow: hidden;
+}
+
+#logo {
+  float: left;
+}
+
+#main-menu-bar {
+  background-color: #c1b7ff;
+  margin-top: 0em;
+  padding: 0em 0.5em 0.5em 0.5em;
+  border-radius: 0 0 5px 5px;
+  float: right;
+}
+
+#main-menu-list {
+  list-style-type: none;
+  padding-left: 0em;
+}
+
+.main-menu-item {
 }
