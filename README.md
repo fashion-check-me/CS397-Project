@@ -13,7 +13,7 @@ The unfashionables are:
 * Kelsey Maricic
 * Chris Jackson
 * Andrew Rhoads
-* Dane Greet
+* Dane Greer
 
 Josh is the project lead.
 
