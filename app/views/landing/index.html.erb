@@ -1,1 +1,37 @@
-<p>We fashion now</p>
+<div id="female" class="genderPane">
+  <div class="runnerUpTiles">
+    <% 4.times do |i| %>
+    <div class="outfitTile">
+      <%= image_tag "female#{i}.jpg" %>
+      <%= image_tag "upvote.png" %>
+      <%= image_tag "downvote.png" %>
+      <%= image_tag "favorite.png" %>
+    </div>
+    <% end %>
+  </div>
+  <div class="bestTile outfitTile">
+      <%= image_tag "femaleTop.jpg" %>
+      <%= image_tag "upvote.png" %>
+      <%= image_tag "downvote.png" %>
+      <%= image_tag "favorite.png" %>
+  </div>
+</div>
+
+<div id="male" class="genderPane">
+  <div class="bestTile outfitTile">
+      <%= image_tag "maleTop.jpg" %>
+      <%= image_tag "upvote.png" %>
+      <%= image_tag "downvote.png" %>
+      <%= image_tag "favorite.png" %>
+  </div>
+  <div class="runnerUpTiles">
+    <% 4.times do |i| %>
+    <div class="outfitTile">
+      <%= image_tag "male#{i}.jpg" %>
+      <%= image_tag "upvote.png" %>
+      <%= image_tag "downvote.png" %>
+      <%= image_tag "favorite.png" %>
+    </div>
+    <% end %>
+  </div>
+</div>
