@@ -1,5 +1,4 @@
 #content_wrapper {
-  background: #ffffff;
   display: table;
   height: 100%;
   width: 100%;
@@ -7,7 +6,6 @@
 
 .gender_pane {
   display: table-cell;
-  background: grey;
   overflow: hidden;
   text-align: center;
   vertical-align:middle;
@@ -15,28 +13,23 @@
 }
 
 #male {
-  background: blue;
   overflow: hidden;
 }
 #female {
-  background: pink;
   overflow: hidden;
 }
 
 .female_tiles {
-  background = black;
   float: right;
   margin-right: 2em;
 }
 
 .male_tiles {
-  background = black;
   float: left;
   margin-left: 2em;
 }
 
 .best_tile > img{ 
-  background: grey;
 }
 
 #best_male > img{
@@ -47,4 +40,14 @@
 #best_female > img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.vote_bar > img {
+  min-width: 32px;
+}
+
+.vote_bar {
+  padding-top: 0.25em;
+  background-color: #73A6FF;
+  border-radius: 0 0 0.52em 0.52em;
 }
