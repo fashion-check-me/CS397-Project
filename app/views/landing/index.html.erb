@@ -2,19 +2,25 @@
   <% ["fe", ""].each do |p| # awesome hack %> 
   <div id="<%=p%>male" class="gender_pane">
     <div id="best_<%=p%>male" class="<%=p%>male_tiles best_tile outfit_tile">
-        <%= image_tag "#{p}maleTop.jpg", :class => "top_image" %>
+      <%= image_tag "#{p}maleTop.png", :class => "top_image" %>
+      <div class="vote_bar">
         <%= image_tag "upvote.png", :class => "upvote_image" %>
         <%= image_tag "downvote.png", :class => "downvote_image" %>
         <%= image_tag "favorite.png", :class => "favorite_image" %>
+      </div>
     </div>
     <div class="<%=p%>male_tiles">
       <% 4.times do |i| %>
+      <% if i % 2 == 0 %> <div> <% end %>
       <div class="outfit_tile">
-        <%= image_tag "#{p}male#{i}.jpg" %>
-        <%= image_tag "upvote.png" %>
-        <%= image_tag "downvote.png" %>
-        <%= image_tag "favorite.png" %>
+        <%= image_tag "#{p}male#{i}.png" %>
+        <div class="vote_bar">
+          <%= image_tag "upvote.png", :class => "upvote_image" %>
+          <%= image_tag "downvote.png", :class => "downvote_image" %>
+          <%= image_tag "favorite.png", :class => "favorite_image" %>
+        </div>
       </div>
+      <% if i % 2 == 1 %> </div> <% end %>
       <% end %>
     </div>
   </div>

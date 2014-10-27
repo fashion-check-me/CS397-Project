@@ -26,21 +26,25 @@
 .female_tiles {
   background = black;
   float: right;
+  margin-right: 2em;
 }
 
 .male_tiles {
   background = black;
   float: left;
+  margin-left: 2em;
 }
 
-.best_tile { 
+.best_tile > img{ 
   background: grey;
 }
 
-#best_male {
-  
+#best_male > img{
+  max-width: 100%;
+  max-height: 100%;
 }
 
-#best_female {
-
+#best_female > img {
+  max-width: 100%;
+  max-height: 100%;
 }

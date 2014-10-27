@@ -33,5 +33,10 @@ body {
 }
 
 .outfit_tile {
+  float: left;
+}
 
+.outfit_tile > img {
+  max-width: 200px;
+  max-height: 300px;
 }
