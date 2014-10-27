@@ -1,31 +1,46 @@
-#content-wrapper {
+#contentWrapper {
   background: #ffffff;
-  overflow: hidden;
-  width: 70%;
+  display: table;
   height: 100%;
+  width: 100%;
 }
 
 .genderPane {
-  float: left;
-  background = grey;
+  display: table-cell;
+  background: grey;
   overflow: hidden;
+  text-align: center;
+  vertical-align:middle;
+  /* line-height: 13em; */
 }
 
 #male {
-  background = blue;
+  background: blue;
   overflow: hidden;
 }
 #female {
-  background = pink;
+  background: pink;
   overflow: hidden;
 }
 
-.runnerUpTiles {
+.femaleTiles {
   background = black;
-  overflow: hidden;
+  float: right;
+}
+
+.maleTiles {
+  background = black;
+  float: left;
 }
 
 .bestTile { 
-  overflow: hidden;
-  background = black;
+  background: grey;
+}
+
+#bestMale {
+  
+}
+
+#bestFemale {
+
 }
