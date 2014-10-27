@@ -1,11 +1,11 @@
-#contentWrapper {
+#content_wrapper {
   background: #ffffff;
   display: table;
   height: 100%;
   width: 100%;
 }
 
-.genderPane {
+.gender_pane {
   display: table-cell;
   background: grey;
   overflow: hidden;
@@ -23,24 +23,24 @@
   overflow: hidden;
 }
 
-.femaleTiles {
+.female_tiles {
   background = black;
   float: right;
 }
 
-.maleTiles {
+.male_tiles {
   background = black;
   float: left;
 }
 
-.bestTile { 
+.best_tile { 
   background: grey;
 }
 
-#bestMale {
+#best_male {
   
 }
 
-#bestFemale {
+#best_female {
 
 }
