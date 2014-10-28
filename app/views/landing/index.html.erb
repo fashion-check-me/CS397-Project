@@ -1,6 +1,8 @@
 <div id="content_wrapper">
   <% ["fe", ""].each do |p| # awesome hack %> 
   <div id="<%=p%>male" class="gender_pane">
+    <div class="best_<%=p%>male_wrapper">
+    <div class="best_title_text">Best <%= (p + "male").humanize %> Outfit</div>
     <div id="best_<%=p%>male" class="<%=p%>male_tiles best_tile outfit_tile">
       <%= image_tag "#{p}maleTop.png", :class => "top_image" %>
       <div class="vote_bar">
@@ -8,6 +10,7 @@
         <%= image_tag "downvote.png", :class => "downvote_image" %>
         <%= image_tag "favorite.png", :class => "favorite_image" %>
       </div>
+    </div>
     </div>
     <div class="<%=p%>male_tiles">
       <% 4.times do |i| %>

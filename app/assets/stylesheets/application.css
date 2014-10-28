@@ -3,37 +3,33 @@
 body {
   /* background-image: url('background.png'); */
   /* background: #c1b7ff; */
-  width: 90%;
+  width: 100%;
   overflow: hidden;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 0;
   background-color: lightblue;
 }
 
 #header {
+  width: 100%;
+  margin-top: 0em;
+  margin-bottom: 1em;
+  text-align: center;
+  background-color: #c1b7ff;
+  list-style-type: none;
+  display: table;
   overflow: hidden;
 }
 
 #logo {
-  float: left;
+  font-size: 2em;
 }
 
-#main-menu-bar {
-  background-color: #c1b7ff;
-  margin-top: 0em;
-  padding: 0em 0.5em 0.5em 0.5em;
-  border-radius: 0 0 5px 5px;
-  float: right;
-}
-
-#main-menu-list {
-  list-style-type: none;
-  padding-left: 0em;
-}
 
 .main-menu-item {
+  font-weight: bold;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 1em;
 }
 
 .outfit_tile {
@@ -46,6 +42,6 @@ body {
 }
 
 .outfit_tile > img {
-  max-width: 200px;
-  max-height: 300px;
+  max-width: 250px;
+  max-height: 320px;
 }

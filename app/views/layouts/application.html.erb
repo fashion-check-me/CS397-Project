@@ -8,20 +8,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="header">
-  <div id="logo">FASHION-CHECK.ME</div>
-  <div id="main-menu-bar">
-    <ul id="main-menu-list">
-      <li class="main-menu-item">Log in</li>
-      <li class="main-menu-item">Log out</li>
-      <li class="main-menu-item">My Outfits</li>
-      <li class="main-menu-item">Account</li>
-      <li class="main-menu-item">Settings</li>
-    </ul>
+  <div id="header">
+    <span id="logo" class="main-menu-item">fashion-check.me</span>
+    <span class="main-menu-item">New</span>
+    <span class="main-menu-item">Best Dressed</span>
+    <span class="main-menu-item">My Profile</span>
+    <span class="main-menu-item">Settings</span>
+    <span class="main-menu-item">Log out</span>
+    <input class="main-menu-item" value="Search..." />
   </div>
-</div>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
