@@ -4,7 +4,6 @@ body {
   /* background-image: url('background.png'); */
   /* background: #c1b7ff; */
   width: 100%;
-  overflow: hidden;
   margin: 0;
   background-color: lightblue;
 }
@@ -17,7 +16,6 @@ body {
   background-color: #c1b7ff;
   list-style-type: none;
   display: table;
-  overflow: hidden;
 }
 
 #logo {

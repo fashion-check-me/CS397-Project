@@ -6,17 +6,14 @@
 
 .gender_pane {
   display: table-cell;
-  overflow: hidden;
   text-align: center;
   vertical-align:middle;
   /* line-height: 13em; */
 }
 
 #male {
-  overflow: hidden;
 }
 #female {
-  overflow: hidden;
 }
 
 .female_tiles {
