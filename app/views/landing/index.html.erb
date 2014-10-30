@@ -1,10 +1,10 @@
 <div id="content_wrapper">
-  <% ["fe", ""].each do |p| # awesome hack %> 
-  <div id="<%=p%>male" class="gender_pane">
-    <div class="best_<%=p%>male_wrapper">
-    <div class="best_title_text">Best <%= (p + "male").humanize %> Outfit</div>
-    <div id="best_<%=p%>male" class="<%=p%>male_tiles best_tile outfit_tile">
-      <%= image_tag "#{p}maleTop.png", :class => "top_image" %>
+  <% ["female", "male"].each do |sex| %> 
+  <div id="<%=sex%>" class="gender_pane">
+    <div class="best_<%=sex%>_wrapper">
+    <div class="best_title_text">Best <%= sex.humanize %> Outfit</div>
+    <div id="best_<%=sex%>" class="<%=sex%>_tiles best_tile outfit_tile">
+      <%= image_tag "#{sex}Top.png", :class => "top_image" %>
       <div class="vote_bar">
         <%= image_tag "upvote.png", :class => "upvote_image" %>
         <%= image_tag "downvote.png", :class => "downvote_image" %>
@@ -12,11 +12,11 @@
       </div>
     </div>
     </div>
-    <div class="<%=p%>male_tiles">
+    <div class="<%=sex%>_tiles">
       <% 4.times do |i| %>
       <% if i % 2 == 0 %> <div> <% end %>
       <div class="outfit_tile">
-        <%= image_tag "#{p}male#{i}.png" %>
+        <%= image_tag "#{sex}#{i}.png" %>
         <div class="vote_bar">
           <%= image_tag "upvote.png", :class => "upvote_image" %>
           <%= image_tag "downvote.png", :class => "downvote_image" %>
