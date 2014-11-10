@@ -1,5 +1,4 @@
 class Outfit < ActiveRecord::Base
-
 	# This method associates the attribute ":image" with a file attachment
 	# '>' specifies resize option for imagemagick
  	has_attached_file :image, styles: { medium: "450x800>", thumb: "100x100>" }
