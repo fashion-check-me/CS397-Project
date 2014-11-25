@@ -44,8 +44,8 @@
 }
 
 .vote_bar {
-  padding-top: 0.25em;
-  background-color: #73A6FF;
+  /*padding-top: 0.25em;*/
+  background-color: #CFCFCF;
   border-radius: 0 0 0.52em 0.52em;
 }
 
@@ -70,7 +70,7 @@
   border-style: solid;
   border-radius: 1em;
   border-width: 0.5em;
-  border-color: #3366FF;
+  border-color: #FFFFFF;
 }
 
 .outfit_tile > img {
