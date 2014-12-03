@@ -1,3 +1,91 @@
+<div class="container">
+  <div class="row">
+	<div class="col-sm-5">
+	  <a href="#" class="btn btn-default">Select Picture</a>
+		  
+	  <div class="row">
+		<div class="col-sm-12">
+            <%= image_tag "femaleTop.png" %>
+		</div>
+	  </div>
+	</div>
+		
+		
+	<div class="col-sm-5">
+	  <h3>Add Description</h3>
+		  
+	  <div class="row">
+		<div class="col-sm-12">
+		  <textarea class="form-control" rows="3" placeholder="Enter Description" required></textarea>
+		</div>
+	  </div>
+		  
+	  <div class="row">
+		<div class="col-sm-12">
+		  <a href="#" class="btn btn-default">Submit</a>
+		</div>
+	  </div>
+		   
+	  <div class="row">
+		<div class="col-sm-12">
+		  <h3>Add Color Tags</h3>
+		</div>
+	  </div>
+		   
+	  <div class="row">
+		<div class="col-sm-12">
+		  <script type="text/javascript" src="jscolor/jscolor.js"></script>
+		  Click here: <input class="color" value="66ff00">
+		  <a href="#" class="btn btn-default">Submit</a>
+		</div>
+	  </div>
+		  
+	  <div class="col-sm-12">
+		<h4>Selected Colors</h4>
+	  </div>
+	  <div class="col-sm-12">
+	    [PLACE THE SELECTED COLORS HERE AND ALLOW REMOVAL]
+	  </div>
+		  
+	  <div class="row">
+		<div class="col-sm-12">
+		  <h3>Add Non-Color Tags</h3>
+		</div>
+	  </div>
+		  
+	  <div class="row">
+	    <div class="col-sm-12">
+		  <div class="row">
+            <div class="col-lg-6">
+              <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row --> 
+        </div>
+      </div>
+		  
+      <div class="col-sm-12">
+        <h4>Selected Tags</h4>
+      </div>
+      <div class="col-sm-12">
+        [PLACE THE SELECTED TAGS HERE AND ALLOW REMOVAL]
+      </div>
+		  
+      <div class="row top-buffer">
+        <div class="col-sm-12">
+          <button type="button" class="btn btn-default btn-lg">
+            Submit Outfit!
+          </button>
+        </div>
+      </div>
+			 
+    </div>
+   </div>
+</div> <!-- /container -->
 
 <div class="field">
   <%= f.label :image %><br />
