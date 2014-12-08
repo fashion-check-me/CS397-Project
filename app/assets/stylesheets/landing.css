@@ -32,11 +32,15 @@
 #best_male > img{
   max-width: 250px;
   max-height: 320px;
+  width: 250px;
+  height: 320px;
 }
 
 #best_female > img {
   max-width: 250px;
   max-height: 320px;
+  width: 250px;
+  height: 320px;
 }
 
 .vote_bar > img {
@@ -76,4 +80,6 @@
 .outfit_tile > img {
   max-width: 150px;
   max-height: 220px;
+  width: 150px;
+  height: 220px;
 }

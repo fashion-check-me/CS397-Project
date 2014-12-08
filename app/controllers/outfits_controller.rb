@@ -12,16 +12,13 @@ class OutfitsController < ApplicationController
 
     if @outfit.save
       redirect_to @outfit, notice: 'Outfit was successfully created.'
-     else
-       render action: 'new'
+    else
+      render action: 'new'
     end
   end
 
-
   private
-
-    def outfit_params
-      params.require(:outfit).permit(:image, :name)
-    end
-
+  def outfit_params
+    params.require(:outfit).permit(:image, :name)
+  end
 end
