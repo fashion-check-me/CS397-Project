@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# devise for user support
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1'
