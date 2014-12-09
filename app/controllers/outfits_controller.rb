@@ -9,7 +9,7 @@ class OutfitsController < ApplicationController
 
   def create
     @outfit = Outfit.new(outfit_params)
-
+    @outfit.userid = 1
     if @outfit.save
       redirect_to @outfit, notice: 'Outfit was successfully created.'
     else
@@ -19,6 +19,6 @@ class OutfitsController < ApplicationController
 
   private
   def outfit_params
-    params.require(:outfit).permit(:image, :name)
+    params.require(:outfit).permit(:image, :title, :description)
   end
 end
