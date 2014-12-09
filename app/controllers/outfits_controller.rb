@@ -5,6 +5,7 @@ class OutfitsController < ApplicationController
   end
 
   def show
+    @outfit = Outfit.find(params[:id])
   end
 
   def create
