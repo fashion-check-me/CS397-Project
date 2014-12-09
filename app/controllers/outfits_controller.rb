@@ -20,6 +20,6 @@ class OutfitsController < ApplicationController
 
   private
   def outfit_params
-    params.require(:outfit).permit(:image, :title, :description)
+    params.require(:outfit).permit(:image, :title, :description, :gender)
   end
 end

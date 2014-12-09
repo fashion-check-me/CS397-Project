@@ -22,10 +22,16 @@
   </div>
   <div class="row">
     <div class="col-sm-5">
+      <h3>Gender</h3>
+      <%= f.text_field :gender, :class => "form-control", :value => "(e.g. male, female)" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-5">
       <h3>Image</h3>
       <div class="row">
         <div class="col-sm-12">
-          <%= f.file_field :image %>
+          <%= f.file_field :image, :class => "btn" %>
         </div>
       </div>
     </div>
