@@ -1,4 +1,22 @@
 <!-- Where most recent outfits are shown -->
+
+<div class="container">
 <section id="outfits">
-<%= render @outfits %>
+
+<% @outfits.each do |outfit| %>
+  <div class="row">
+    <h3>
+      <%= outfit.name %>
+    </h3>
+  </div>
+  <div class="row">
+    <%= image_tag outfit.image.url %>
+  </div>
+  <div class="row">
+    <h3>Description</h3>
+    <%= outfit.description %>
+  </div>
+<% end %>
+
 </section>
+</div>

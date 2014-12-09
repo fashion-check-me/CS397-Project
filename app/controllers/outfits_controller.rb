@@ -6,7 +6,7 @@ class OutfitsController < ApplicationController
   end
 
   def index
-      @outfits = Outfit.all
+    @outfits = Outfit.all
   end
 
   def show
@@ -16,6 +16,7 @@ class OutfitsController < ApplicationController
   def create
     @outfit = Outfit.new(outfit_params)
     @outfit.userid = 1
+
     if @outfit.save
       redirect_to @outfit, notice: 'Outfit was successfully created.'
     else
