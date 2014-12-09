@@ -3,12 +3,13 @@ source 'https://rubygems.org'
 # devise for user support
 gem 'devise'
 
+# paperclip for image handling
+gem "paperclip", "~> 4.2"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1'
 # Use postgres as the database for Active Record
 gem 'pg', '~> 0.17.1'
-# Use paperclip for image handling
-gem "paperclip", "~> 4.2"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
