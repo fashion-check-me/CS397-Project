@@ -1,4 +1,5 @@
 class OutfitsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:new, :create]
 
   def new
     @gender_options = ['Unisex', 'Male', 'Female']
