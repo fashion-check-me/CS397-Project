@@ -1,5 +1,9 @@
 class OutfitsController < ApplicationController
 
+  def new
+    @gender_options = ['Unisex', 'Male', 'Female']
+  end
+
   def index
       @outfits = Outfit.all
   end
