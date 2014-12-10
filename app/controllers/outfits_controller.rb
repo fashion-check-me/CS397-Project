@@ -1,5 +1,5 @@
 class OutfitsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :create]
+  before_filter :authenticate_user!, :only => [:new, :create, :vote_up, :vote_down, :vote_undo]
 
   def index
     @outfits = Outfit.order(created_at: :desc)  # Newest first
@@ -18,6 +18,26 @@ class OutfitsController < ApplicationController
       redirect_to @outfit, notice: 'Outfit was successfully created.'
     else
       render action: 'new'
+    end
+  end
+
+  def vote_up
+    @outfit = Outfit.find(params[:id])
+    @outfit.liked_by current_user
+  end
+
+  def vote_down
+    @outfit = Outfit.find(params[:id])
+    @outfit.disliked_by current_user
+  end
+
+  def vote_undo
+    @outfit = Outfit.find(params[:id])
+
+    if current_user.liked? @outfit
+      @outfit.unliked_by current_user
+    else
+      @outfit.undisliked_by current_user
     end
   end
 
