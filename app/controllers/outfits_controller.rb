@@ -8,6 +8,8 @@ class OutfitsController < ApplicationController
   def show
     @outfit = Outfit.find(params[:id])
     @user = User.find(@outfit.userid)
+    @tags = Tag.find_by(outfitid: @outfit.id)
+    @tags = [] if @tags.nil?
   end
 
   def create
@@ -17,6 +19,7 @@ class OutfitsController < ApplicationController
     if @outfit.save
       redirect_to @outfit, notice: 'Outfit was successfully created.'
     else
+      flash.alert = "Error creating outfit. You get to guess what the error was."
       render action: 'new'
     end
   end

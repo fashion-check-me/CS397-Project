@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post '/search/search', to: 'search#search'
   get '/search', to: 'search#index'
 
+  resources :tags
+
   resources :outfits
   put 'outfits/:id/upvote' => 'outfits#vote_up', as: 'outfit_vote_up'
   put 'outfits/:id/downvote' => 'outfits#vote_down', as: 'outfit_vote_down'
