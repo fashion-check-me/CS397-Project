@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Search</h1>
+  <%= form_for :search, :url => search_search_path do |f| %>
+    <div class="row">
+      <%= f.label :color %>
+      <%= f.text_field :color %>
+    </div>
+    <div class="row">
+      <%= f.label :pattern %>
+      <%= f.text_field :pattern %>
+    </div>
+    <div class="row">
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+    </div>
+    <div class="row">
+      <%= f.label :brand %>
+      <%= f.text_field :brand %>
+    </div>
+    <div class="row">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'landing#index'
 
+  post '/search/search', to: 'search#search'
+  get '/search', to: 'search#index'
 
   resources :outfits
   put 'outfits/:id/upvote' => 'outfits#vote_up', as: 'outfit_vote_up'
