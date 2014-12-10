@@ -20,3 +20,6 @@ Josh is the project lead.
 # Motivation
 
 Our group project for CS397, and a very roundabout way to crowdsource the problem that we are terrible at fashion.
+
+## Development
+Make sure to have ImageMagick installed as it is needed for outfit image resizing.
