@@ -11,7 +11,7 @@ class OutfitsController < ApplicationController
 
   def create
     @outfit = Outfit.new(outfit_params)
-    @outfit.userid = 1
+    @outfit.userid = current_user.id
 
     if @outfit.save
       redirect_to @outfit, notice: 'Outfit was successfully created.'
