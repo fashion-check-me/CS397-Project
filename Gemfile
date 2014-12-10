@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 gem 'devise'
 
 # paperclip for image handling
-gem "paperclip", "~> 4.2"
+gem "paperclip", '~> 4.2'
+
+# voting functionality
+gem 'acts_as_votable', '~> 0.10.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1'
