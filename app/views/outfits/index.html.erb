@@ -1,18 +1,22 @@
 <!-- Where most recent outfits are shown -->
 
 <div class="container outfits">
-
-<% @outfits.each do |outfit| %>
-  <div class="outfit">
-  <%= link_to outfit do %>
-      <h3><%= outfit.name %></h3>
-
-      <%= image_tag outfit.image.url(:thumb) %>
-
-      <h3>Description</h3>
-      <%= outfit.description %>
+  <div class="row">
+    <% @outfits.each_with_index do |outfit,i| %>
+	<% if i % 6 == 0 %> 
+	  </div>
+      <div class="row">	  
+	<% end %>
+	<div class="col-md-2">
+      <div class="outfit">
+        <%= link_to outfit do %>
+          <h3><%= outfit.name %></h3>
+          <%= image_tag outfit.image.url(:thumb) %>
+          <h3>Description</h3>
+          <%= outfit.description %>
+        <% end %>
+      </div>
+	</div>
   <% end %>
   </div>
-<% end %>
-
 </div>
