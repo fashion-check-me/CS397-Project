@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  'yes': false
+  userid: 1
+  outfitid: 1
+
+two:
+  'yes': false
+  userid: 1
+  outfitid: 1
