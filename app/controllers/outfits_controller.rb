@@ -7,6 +7,7 @@ class OutfitsController < ApplicationController
 
   def show
     @outfit = Outfit.find(params[:id])
+    @user = User.find(@outfit.userid)
   end
 
   def create
@@ -19,6 +20,7 @@ class OutfitsController < ApplicationController
       render action: 'new'
     end
   end
+
 
   private
   def outfit_params
