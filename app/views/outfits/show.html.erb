@@ -5,7 +5,9 @@
     </h3>
   </div>
   <div class="row">
-    <%= image_tag @outfit.image.url %>
+    <%= link_to @outfit.image.url do %>
+      <%= image_tag @outfit.image.url(:medium) %>
+    <% end %>
   </div>
   <div class="row">
     <h3>Description</h3>
