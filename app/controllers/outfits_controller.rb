@@ -2,7 +2,7 @@ class OutfitsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create]
 
   def index
-    @outfits = Outfit.all
+    @outfits = Outfit.order(created_at: :desc)  # Newest first
   end
 
   def show
@@ -20,7 +20,6 @@ class OutfitsController < ApplicationController
       render action: 'new'
     end
   end
-
 
   private
   def outfit_params
