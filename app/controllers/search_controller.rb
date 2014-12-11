@@ -6,7 +6,7 @@ class SearchController < ApplicationController
   def search
     args = Hash.new
     search_params.each do |k,v|
-      args[k] = v unless v.empty? or k.eql? "color"
+      args[k] = v unless v.empty?
     end
     flash.notice = "Args were: #{args.inspect}"
     @result = Tag.where(args).map {|t| Outfit.find(t.outfitid)}.uniq

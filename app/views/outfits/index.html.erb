@@ -10,10 +10,9 @@
 	<div class="col-md-2">
       <div class="outfit well">
         <%= link_to outfit do %>
-          <h3><%= outfit.name %></h3>
-          <%= image_tag outfit.image.url(:thumb) %>
-          <h3>Description</h3>
-          <%= outfit.description %>
+          <div><h3><%= outfit.name %></h3></div>
+          <div><%= image_tag outfit.image.url(:thumb) %></div>
+          <div><%= outfit.description %></div>
         <% end %>
       </div>
 	</div>

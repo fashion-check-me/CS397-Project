@@ -1,7 +1,6 @@
-<div class="row">
-  <span class="column">Pattern: <%= tag.pattern %></span>
-  <span class="column">Category: <%= tag.category %></span>
-  <span class="column">Brand: <%= tag.brand %></span>
-  <span class="column">Color1: <%= tag.primary_color %></span>
-  <span class="column">Color2: <%= tag.secondary_color %></span>
+<div class="col-md-2 col-md-offset-2 well">
+  <div class="row"><h4><%= tag.category %></h4></div>
+  <div class="row">Color: <%= tag.color %></div>
+  <div class="row">Pattern: <%= tag.pattern%></div>
+  <div class="row">Brand: <%= tag.brand %></div>
 </div>

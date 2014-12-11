@@ -22,6 +22,6 @@ class TagsController < ApplicationController
 
   private
   def tag_params
-    params.require(:tag).permit(:outfitid, :pattern, :category, :brand, :primary_color, :secondary_color)
+    params.require(:tag).permit(:outfitid, :pattern, :category, :brand, :color)
   end
 end

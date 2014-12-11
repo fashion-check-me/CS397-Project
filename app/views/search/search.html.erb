@@ -1,11 +1,11 @@
 <div class="container">
   <h1>Result</h1>
-  <div class="row">
+  <div class="column">
   <% @result.each do |r| %>
-  <span class="column">
-    <p><%= if (r.get_dislikes.size + r.get_likes.size) != 0 then "#{(r.get_likes.size / (r.get_likes.size + r.get_dislikes.size.to_f)) * 100}% like this."  else "No opinion." end%></p>
-    <%= link_to(image_tag(r.image, :class => "search-img"), r) %>
-  </span>
+    <div class="row well"> 
+      <p><%= if (r.get_dislikes.size + r.get_likes.size) != 0 then "#{(r.get_likes.size / (r.get_likes.size + r.get_dislikes.size.to_f)) * 100}% like this."  else "No opinion." end%></p>
+      <%= link_to(image_tag(r.image, :class => "search-img"), r) %>
+    </div>
   <% end %>
   </div>
 </div>
