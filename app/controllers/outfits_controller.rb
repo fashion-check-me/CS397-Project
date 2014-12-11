@@ -33,6 +33,8 @@ class OutfitsController < ApplicationController
     else
       @outfit.liked_by current_user
     end
+
+    redirect_to @outfit
   end
 
   def vote_down
@@ -41,8 +43,9 @@ class OutfitsController < ApplicationController
     if current_user.disliked? @outfit
       @outfit.undisliked_by current_user
     else
-       @outfit.disliked_by current_user
+      @outfit.disliked_by current_user
     end
+    redirect_to @outfit
   end
 
   private

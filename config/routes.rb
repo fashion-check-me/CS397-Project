@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   resources :tags
 
   resources :outfits
-  put 'outfits/:id/upvote' => 'outfits#vote_up', as: 'outfit_vote_up'
-  put 'outfits/:id/downvote' => 'outfits#vote_down', as: 'outfit_vote_down'
+  get 'outfits/:id/upvote' => 'outfits#vote_up', as: 'outfit_vote_up'
+  get 'outfits/:id/downvote' => 'outfits#vote_down', as: 'outfit_vote_down'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
