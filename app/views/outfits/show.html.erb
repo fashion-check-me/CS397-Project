@@ -30,6 +30,8 @@
     <% @tags.each do |t| %>
       <%= render t %>
     <% end %>
-    <%= link_to "Add Tag", new_tag_path(:outfitid => @outfit.id) %>
+    <button type="button" class="btn btn-md btn btn-default pull-down">
+		<%= link_to "Add Tag", new_tag_path(:outfitid => @outfit.id) %>
+      </button>
   </div>
 </div>
