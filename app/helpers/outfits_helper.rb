@@ -1,12 +1,12 @@
 module OutfitsHelper
 
   def outfit_upvote_state(outfit)
-    return 'upvoted' if current_user.liked? outfit
+    return 'upvoted' if not current_user.nil? and current_user.liked? outfit
     'upvote'
   end
 
   def outfit_downvote_state(outfit)
-    return 'downvoted' if current_user.disliked? outfit
+    return 'downvoted' if not current_user.nil? and current_user.disliked? outfit
     'downvote'
   end
 
