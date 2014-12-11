@@ -1,5 +1,7 @@
 <h3>New Tag for <%= @outfitid %></h3>
 <%= form_for :tag, :url => tags_path do |f| %>
+  <%= f.hidden_field :outfitid, :value => @outfitid %>
+
   <div>
   <%= f.label :category %>
   <%= f.text_field :category %>
@@ -26,6 +28,6 @@
   </div>
   
   <div>
-    <%= f.submit "Save Tag", :outfitid => @outfitid %>
+    <%= f.submit "Save Tag" %>
   </div>
 <% end %>

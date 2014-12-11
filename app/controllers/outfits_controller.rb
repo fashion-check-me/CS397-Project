@@ -9,7 +9,11 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.find(params[:id])
     @user = User.find(@outfit.userid)
     @tags = Tag.find_by(outfitid: @outfit.id)
-    @tags = [] if @tags.nil?
+    if @tags.nil?
+      @tags = []
+    elsif @tags.instance_of? Tag
+      @tags = [@tags]
+    end
   end
 
   def create
