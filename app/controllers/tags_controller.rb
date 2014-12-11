@@ -4,6 +4,7 @@ class TagsController < ApplicationController
     if @outfitid.nil?
       redirect_to outfits_path, alert: "If you want to add a tag, go to the outfit's page and click \"Add Tag\""
     end
+    @outfit = Outfit.find(@outfitid)
   end
 
   def create

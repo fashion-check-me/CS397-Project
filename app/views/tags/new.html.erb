@@ -1,28 +1,32 @@
-<h3>New Tag for <%= @outfitid %></h3>
+<div class="container">
+<div class="col-md-5 col-md-offset-3"
 <%= form_for :tag, :url => tags_path do |f| %>
   <%= f.hidden_field :outfitid, :value => @outfitid %>
 
-  <div>
+  <h3>New Tag for outfit <%= @outfit.name %></h3>
+  <div class="row">
   <%= f.label :category %>
-  <%= f.text_field :category %>
+  <%= f.text_field :category, :class => "form-control" %>
   </div>
 
-  <div>
+  <div class="row">
   <%= f.label :pattern %>
-  <%= f.text_field :pattern %>
+  <%= f.text_field :pattern, :class => "form-control" %>
   </div>
 
-  <div>
+  <div class="row">
   <%= f.label :brand %>
-  <%= f.text_field :brand %>
+  <%= f.text_field :brand, :class => "form-control" %>
   </div>
 
-  <div>
+  <div class="row">
   <%= f.label :color %>
-  <%= f.text_field :color %>
+  <%= f.text_field :color, :class => "form-control" %>
   </div>
   
-  <div>
-    <%= f.submit "Save Tag" %>
+  <div class="row">
+    <hr />
+    <%= f.submit "Save Tag", :class => "btn btn-lg" %>
   </div>
 <% end %>
+</div>
