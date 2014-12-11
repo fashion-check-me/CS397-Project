@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   resources :outfits
   put 'outfits/:id/upvote' => 'outfits#vote_up', as: 'outfit_vote_up'
   put 'outfits/:id/downvote' => 'outfits#vote_down', as: 'outfit_vote_down'
-  put 'outfits/:id/undovote' => 'outfits#vote_undo', as: 'outfit_vote_undo'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
