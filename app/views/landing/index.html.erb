@@ -1,31 +1,17 @@
-<div id="content_wrapper">
+<div class="container">
+<div class="row">
   <% ["female", "male"].each do |sex| %> 
-  <div id="<%=sex%>" class="gender_pane">
-    <div class="best_<%=sex%>_wrapper">
-    <div class="best_title_text">Best <%= sex.humanize %> Outfit</div>
-    <div id="best_<%=sex%>" class="<%=sex%>_tiles best_tile outfit_tile">
-      <%= image_tag "#{sex}Top.png", :class => "top_image" %>
-      <div class="vote_bar">
-        <%= image_tag "upvote.png", :class => "upvote_image" %>
-        <%= image_tag "downvote.png", :class => "downvote_image" %>
-        <%= image_tag "favorite.png", :class => "favorite_image" %>
-      </div>
+  <div id="<%=sex%>" class="col-xs-4 col-sm-4 col-md-4 half-col">
+    <% @top_images[sex].each do |o| %>
+    <div class="row outfit-row">
+      <%= link_to image_tag(o.image, :class => "outfit-img"), o %>
     </div>
-    </div>
-    <div class="<%=sex%>_tiles">
-      <% 4.times do |i| %>
-      <% if i % 2 == 0 %> <div> <% end %>
-      <div class="outfit_tile">
-        <%= image_tag "#{sex}#{i}.png" %>
-        <div class="vote_bar">
-          <%= image_tag "upvote.png", :class => "upvote_image" %>
-          <%= image_tag "downvote.png", :class => "downvote_image" %>
-          <%= image_tag "favorite.png", :class => "favorite_image" %>
-        </div>
-      </div>
-      <% if i % 2 == 1 %> </div> <% end %>
-      <% end %>
-    </div>
+    <% end %>
   </div>
   <% end %>
 </div>
+</div>
+
+
+
+

@@ -1,85 +1,11 @@
-#content_wrapper {
-  display: table;
-  height: 100%;
+.half-col {
+  width: 50%;
+}
+
+.outfit-img {
   width: 100%;
 }
 
-.gender_pane {
-  display: table-cell;
-  text-align: center;
-  vertical-align:middle;
-  /* line-height: 13em; */
-}
-
-#male {
-}
-#female {
-}
-
-.female_tiles {
-  float: right;
-  margin-right: 2em;
-}
-
-.male_tiles {
-  float: left;
-  margin-left: 2em;
-}
-
-.best_tile > img{ 
-}
-
-#best_male > img{
-  max-width: 250px;
-  max-height: 320px;
-  width: 250px;
-  height: 320px;
-}
-
-#best_female > img {
-  max-width: 250px;
-  max-height: 320px;
-  width: 250px;
-  height: 320px;
-}
-
-.vote_bar > img {
-  min-width: 32px;
-}
-
-.vote_bar {
-  /*padding-top: 0.25em;*/
-  background-color: #CFCFCF;
-  border-radius: 0 0 0.52em 0.52em;
-}
-
-.best_female_wrapper {
-  margin-top: 4em;
-  float: right;
-}
-
-.best_male_wrapper {
-  margin-top: 4em;
-  float: left;
-}
-
-.best_title_text {
-  font-weight: bold;
-  font-size: 1.5em;
-}
-
-.outfit_tile {
-  float: left;
-  margin: 0.1em;
-  border-style: solid;
-  border-radius: 1em;
-  border-width: 0.5em;
-  border-color: #FFFFFF;
-}
-
-.outfit_tile > img {
-  max-width: 150px;
-  max-height: 220px;
-  width: 150px;
-  height: 220px;
+.outfit-row {
+  margin: 1em;
 }
