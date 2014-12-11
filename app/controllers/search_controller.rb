@@ -8,7 +8,6 @@ class SearchController < ApplicationController
     search_params.each do |k,v|
       args[k] = v unless v.empty?
     end
-    flash.notice = "Args were: #{args.inspect}"
     @result = Tag.where(args).map {|t| Outfit.find(t.outfitid)}.uniq
   end
 
