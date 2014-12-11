@@ -21,11 +21,11 @@ class OutfitsController < ApplicationController
     @outfit.userid = current_user.id
 
     
-
-    if @outfit.save
+    begin
+    @outfit.save!
       redirect_to @outfit, notice: outfit_params[:gender] #'Outfit was successfully created.'
-    else
-      flash.alert = "Error creating outfit. You get to guess what the error was."
+    rescue => e
+      flash.alert = "Error creating outfit. #{e}"
       render action: 'new'
     end
   end

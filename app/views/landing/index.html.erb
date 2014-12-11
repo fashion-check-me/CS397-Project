@@ -2,6 +2,7 @@
 <div class="row">
   <% ["female", "male"].each do |sex| %> 
   <div id="<%=sex%>" class="col-xs-4 col-sm-4 col-md-4 half-col">
+    <h3>Best Dressed <%= sex.humanize %>s</h3>
     <% @top_images[sex].each do |o| %>
     <div class="row outfit-row">
       <%= link_to image_tag(o.image, :class => "outfit-img"), o %>
