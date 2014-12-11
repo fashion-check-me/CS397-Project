@@ -8,12 +8,7 @@ class OutfitsController < ApplicationController
   def show
     @outfit = Outfit.find(params[:id])
     @user = User.find(@outfit.userid)
-    @tags = Tag.find_by(outfitid: @outfit.id)
-    if @tags.nil?
-      @tags = []
-    elsif @tags.instance_of? Tag
-      @tags = [@tags]
-    end
+    @tags = Tag.where(outfitid: @outfit.id)
   end
 
   def create

@@ -1,6 +1,11 @@
-<h1>Result</h1>
-<%= @prms %>
-<p>Size is: <%= @result.size %></p>
-<% @result.each do |r| %>
-  <p><%= r.outfitID %></p>
-<% end %>
+<div class="container">
+  <h1>Result</h1>
+  <div class="row">
+  <% @result.each do |r| %>
+  <span class="column">
+    <p><%= if (r.get_dislikes.size + r.get_likes.size) != 0 then "#{(r.get_likes.size / (r.get_likes.size + r.get_dislikes.size.to_f)) * 100}% like this."  else "No opinion." end%></p>
+    <%= link_to(image_tag(r.image, :class => "search-img"), r) %>
+  </span>
+  <% end %>
+  </div>
+</div>
