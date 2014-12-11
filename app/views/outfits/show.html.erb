@@ -26,14 +26,16 @@
   </div>
 
   <div class="row">
-    <h3>Tags:</h3>
-    <button type="button" class="btn btn-md btn btn-default pull-down">
-      <%= link_to "Add Tag", new_tag_path(:outfitid => @outfit.id) %>
-    </button>
-    <div>
-    <% @tags.each do |t| %>
-      <%= render t %>
-    <% end %>
+   <div class="col-md-12">
+      <h3>Tags:</h3>
+      <button type="button" class="btn btn-md btn btn-default pull-down">
+        <%= link_to "Add Tag", new_tag_path(:outfitid => @outfit.id) %>
+      </button>
+      <div>
+      <% @tags.each do |t| %>
+        <%= render t %>
+      <% end %>
+	  </div>
     </div>
   </div>
 </div>
