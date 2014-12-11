@@ -20,8 +20,10 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new(outfit_params)
     @outfit.userid = current_user.id
 
+    
+
     if @outfit.save
-      redirect_to @outfit, notice: 'Outfit was successfully created.'
+      redirect_to @outfit, notice: outfit_params[:gender] #'Outfit was successfully created.'
     else
       flash.alert = "Error creating outfit. You get to guess what the error was."
       render action: 'new'
@@ -50,6 +52,6 @@ class OutfitsController < ApplicationController
 
   private
   def outfit_params
-    params.require(:outfit).permit(:image, :name, :description, :gender)
+    params.require(:outfit).permit(:gender, :image, :name, :description)
   end
 end
