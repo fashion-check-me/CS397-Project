@@ -20,15 +20,16 @@
 
   <div class="row">
   <div class="col-md-1">
-     <%= link_to image_tag(outfit_upvote_css(@outfit).to_s + '.png'), outfit_vote_up_path(@outfit), method: :put, remote: true %>
-     <%= link_to image_tag(outfit_downvote_css(@outfit).to_s + '.png'), outfit_vote_down_path(@outfit), method: :put, remote: true %>
+    <%= render partial: 'vote_up' %>
+    <%= render partial: 'vote_down' %>
   </div>
-
   </div>
 
   <div class="row">
     <h3>Tags:</h3>
-    <%= link_to "Add Tag", new_tag_path(:outfitid => @outfit.id) %>
+    <button type="button" class="btn btn-md btn btn-default pull-down">
+      <%= link_to "Add Tag", new_tag_path(:outfitid => @outfit.id) %>
+    </button>
     <div>
     <% @tags.each do |t| %>
       <%= render t %>
