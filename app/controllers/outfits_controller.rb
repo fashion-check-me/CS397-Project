@@ -25,8 +25,7 @@ class OutfitsController < ApplicationController
     @outfit.save!
       redirect_to @outfit, notice: outfit_params[:gender] #'Outfit was successfully created.'
     rescue => e
-      flash.alert = "Error creating outfit. #{e}"
-      render action: 'new'
+      render action: 'new', alert: "Error creating outfit. #{e}"
     end
   end
 
