@@ -27,21 +27,21 @@ class OutfitsController < ApplicationController
 
   def vote_up
     @outfit = Outfit.find(params[:id])
-    @outfit.liked_by current_user
-  end
-
-  def vote_down
-    @outfit = Outfit.find(params[:id])
-    @outfit.disliked_by current_user
-  end
-
-  def vote_undo
-    @outfit = Outfit.find(params[:id])
 
     if current_user.liked? @outfit
       @outfit.unliked_by current_user
     else
+      @outfit.liked_by current_user
+    end
+  end
+
+  def vote_down
+    @outfit = Outfit.find(params[:id])
+
+    if current_user.disliked? @outfit
       @outfit.undisliked_by current_user
+    else
+       @outfit.disliked_by current_user
     end
   end
 

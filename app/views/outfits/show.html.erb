@@ -2,12 +2,6 @@
   <div class="row">
     <div class="col-md-8">
       <h3> <%= @outfit.name %> created by <%= @user.email %> </h3>
-	  <button type="button" class="btn btn-xs btn btn-default" onClick="$(this).removeClass('btn btn-xs btn btn-default').addClass('btn btn-xs btn btn-success')">
-        <%= link_to image_tag("upvote.png"), outfit_vote_up_path(@outfit), method: :put, remote: true %>
-      </button>
-      <button type="button" class="btn btn-xs btn btn-default" onClick="$(this).removeClass('btn btn-xs btn btn-default').addClass('btn btn-xs btn btn-danger')">
-	    <%= link_to image_tag("downvote.png"), outfit_vote_down_path(@outfit), method: :put, remote: true %>
-      </button>
 	</div>
 	<div class="col-md-2">
 	  <h3>Description</h3>
@@ -22,6 +16,13 @@
 	<div class="col-md-3">
       <%= @outfit.description %>
 	</div>
+  </div>
+
+  <div class="row">
+     <%= link_to image_tag(outfit_upvote_css(@outfit).to_s + '.png'), outfit_vote_up_path(@outfit), method: :put, remote: true %>
+
+     <%= link_to image_tag(outfit_downvote_css(@outfit).to_s + '.png'), outfit_vote_down_path(@outfit), method: :put, remote: true %>
+
   </div>
 
   <div class="row">
