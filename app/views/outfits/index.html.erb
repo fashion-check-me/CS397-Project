@@ -8,13 +8,19 @@
       <div class="row">	  
 	<% end %>
 	<div class="col-md-2">
-      <div class="outfit well">
-        <%= link_to outfit do %>
-          <h3><%= outfit.name %></h3>
-          <%= image_tag outfit.image.url(:thumb) %>
-          <h3>Description</h3>
-          <%= outfit.description %>
-        <% end %>
+      <div class="row">
+        <div class="outfit well">
+          <%= link_to outfit do %>
+            <h3><%= outfit.name %></h3>
+            <%= image_tag outfit.image.url(:thumb) %>
+            <h3>Description</h3>
+            <%= outfit.description %>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <%= link_to 'like outfit', outfit_vote_up_path(@outfit), method: :put, remote: true %>
+        <%= link_to 'dislike outfit', outfit_vote_down_path(@outfit), method: :put, remote: true %>
       </div>
 	</div>
   <% end %>
