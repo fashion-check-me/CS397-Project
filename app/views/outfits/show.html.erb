@@ -25,13 +25,6 @@
   </div>
 
   <div class="row">
-    <%= link_to image_tag("upvote.png"), outfit_vote_up_path(@outfit), method: :put, remote: true, onclick: 'image_tag("downvote.png")' %>
-    <%= link_to 'dislike outfit', outfit_vote_down_path(@outfit), method: :put, remote: true %>
-		<%= button_to 'dislike outfit', outfit_vote_down_path(@outfit), method: :put, remote: true %>
-
-  </div>
-
-  <div class="row">
     <h3>Tags:</h3>
     <% @tags.each do |t| %>
       <%= render t %>
