@@ -8,7 +8,12 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.new(tag_params)
-    if @tag.save
+
+    outfit = Outfit.find(@tag.outfitid)
+    if (outfit.userid != current_user.id)
+      flash.alert = "You are not the owner of this outfit."
+      redirect_to outfit
+    elsif @tag.save
       redirect_to Outfit.find(@tag.outfitid), notice: "Tag added."
     else
       render action: 'new', alert: "Error creating tag."
