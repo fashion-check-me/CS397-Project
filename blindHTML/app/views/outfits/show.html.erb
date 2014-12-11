@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-8">
       <h3> <%= @outfit.name %> created by <%= @user.email %> </h3>
-	  <button type="button" class="btn btn-xs btn btn-default" onClick="$(this).removeClass('btn btn-xs btn btn-default').addClass('btn btn-xs btn btn-success')">
-        <%= link_to image_tag("upvote.png"), outfit_vote_up_path(@outfit), method: :put, remote: true %>
+	  <button type="button" class="btn btn-xs btn btn-default" onclick="outfit_vote_up_path(@outfit)">
+          <span class="glyphicon glyphicon-arrow-up"></span>
       </button>
-      <button type="button" class="btn btn-xs btn btn-default" onClick="$(this).removeClass('btn btn-xs btn btn-default').addClass('btn btn-xs btn btn-danger')">
-	    <%= link_to image_tag("downvote.png"), outfit_vote_down_path(@outfit), method: :put, remote: true %>
+      <button type="button" class="btn btn-xs btn btn-default" onclick="outfit_vote_down_path(@outfit)">
+        <span class="glyphicon glyphicon-arrow-down"></span>
       </button>
 	</div>
 	<div class="col-md-2">
@@ -25,10 +25,8 @@
   </div>
 
   <div class="row">
-    <%= link_to image_tag("upvote.png"), outfit_vote_up_path(@outfit), method: :put, remote: true, onclick: 'image_tag("downvote.png")' %>
+    <%= link_to 'like outfit', outfit_vote_up_path(@outfit), method: :put, remote: true %>
     <%= link_to 'dislike outfit', outfit_vote_down_path(@outfit), method: :put, remote: true %>
-		<%= button_to 'dislike outfit', outfit_vote_down_path(@outfit), method: :put, remote: true %>
-
   </div>
 
   <div class="row">
