@@ -1,5 +1,5 @@
 class OutfitsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :create, :vote_up, :vote_down, :vote_undo]
+  before_filter :authenticate_user!, :only => [:new, :create, :vote_up, :vote_down, :vote_undo, :destroy]
 
   def index
     @outfits = Outfit.order(created_at: :desc)  # Newest first
@@ -7,8 +7,9 @@ class OutfitsController < ApplicationController
 
   def show
     @outfit = Outfit.find(params[:id])
-    @user = User.find(@outfit.userid)
+    @owner = User.find(@outfit.userid)
     @tags = Tag.where(outfitid: @outfit.id)
+    @user_is_owner = user_signed_in? && @owner.id == current_user.id
   end
 
   def create
@@ -17,7 +18,7 @@ class OutfitsController < ApplicationController
 
     
     begin
-    @outfit.save!
+      @outfit.save!
       redirect_to @outfit, notice: 'Outfit was successfully created.'
     rescue => e
       flash.alert = "Error creating outfit. #{e}"
@@ -46,6 +47,17 @@ class OutfitsController < ApplicationController
       @outfit.disliked_by current_user
     end
     redirect_to @outfit
+  end
+
+  def destroy
+    @outfit = Outfit.find(params[:id])
+
+    if current_user.id != @outfit.userid
+      render :file => "public/401", :status => :unauthorized
+    else
+      @outfit.destroy
+      redirect_to outfits_path
+    end
   end
 
   private

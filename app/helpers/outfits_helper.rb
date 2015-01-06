@@ -17,5 +17,4 @@ module OutfitsHelper
   def outfit_downvote_link(outfit)
     link_to image_tag(outfit_downvote_state(outfit).to_s + '.png'), outfit_vote_down_path(outfit)
   end 
-
 end
