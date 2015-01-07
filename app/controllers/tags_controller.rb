@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:create, :destroy]
   def new
     @outfitid = params[:outfitid]
     if @outfitid.nil?
@@ -18,6 +19,18 @@ class TagsController < ApplicationController
       redirect_to Outfit.find(@tag.outfitid), notice: "Tag added."
     else
       render action: 'new', alert: "Error creating tag."
+    end
+  end
+
+  def destroy
+    @tag = Tag.find(params[:id])
+    @outfit = Outfit.find(@tag.outfitid)
+    
+    if @outfit.userid == current_user.id
+      @tag.destroy
+      redirect_to @outfit
+    else
+      render :file => "public/401", :status => :unauthorized
     end
   end
 

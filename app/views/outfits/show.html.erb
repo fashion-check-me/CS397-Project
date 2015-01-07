@@ -1,47 +1,36 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
-      <h3> <%= @outfit.name %> created by <%= @owner.email %> </h3>
-	</div>
-	<div class="col-md-2">
-	  <h3>Description</h3>
-	</div>
-  </div>
-  <div class="row">
-    <div class="col-md-8">
-      <%= link_to @outfit.image.url do %>
-        <%= image_tag @outfit.image.url(:medium) %>
-      <% end %>
-	</div>
-	<div class="col-md-3">
-      <%= @outfit.description %>
-	</div>
-  </div>
-
-  <div class="row">
-  <div class="col-md-1">
-    <%= render partial: 'vote_up' %>
-    <%= render partial: 'vote_down' %>
-  </div>
+    <h3><%= @outfit.name %></h3>
+    <h5><%= @owner.email %></h5>
   </div>
 
   <% if @user_is_owner %>
   <div class="row">
-  <div class="col-md-1">
     <%= link_to 'Delete', outfit_path(@outfit), class: "btn btn-md btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
   </div>
   <% end %>
 
   <div class="row">
-   <div class="col-md-12">
-      <h3>Tags:</h3>
-        <%= link_to "Add Tag", new_tag_path(:outfitid => @outfit.id), class: "btn btn-md btn-default" if @user_is_owner %>
-      <div>
+    <%= link_to image_tag(@outfit.image.url(:medium)), @outfit.image.url %>
+  </div>
+
+  <div class="row">
+    <%= render partial: 'vote_up' %>
+    <%= render partial: 'vote_down' %>
+  </div>
+
+  <div class="row">
+    <h3>Description:</h3>
+    <p><%= @outfit.description %></p>
+  </div>
+
+  <div class="row">
+    <h3>Tags:</h3>
+    <%= link_to "Add Tag", new_tag_path(:outfitid => @outfit.id), class: "btn btn-md btn-default" if @user_is_owner %>
+    <div>
       <% @tags.each do |t| %>
         <%= render t %>
       <% end %>
-	  </div>
     </div>
   </div>
 </div>

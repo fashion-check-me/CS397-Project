@@ -52,11 +52,11 @@ class OutfitsController < ApplicationController
   def destroy
     @outfit = Outfit.find(params[:id])
 
-    if current_user.id != @outfit.userid
-      render :file => "public/401", :status => :unauthorized
-    else
+    if current_user.id == @outfit.userid
       @outfit.destroy
       redirect_to outfits_path
+    else
+      render :file => "public/401", :status => :unauthorized
     end
   end
 
