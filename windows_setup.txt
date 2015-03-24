@@ -1,0 +1,84 @@
+Okay, so running this: http://www.enterprisedb.com/postgresql-941-installers-win64?ls=Crossover&type=Crossover
+
+It'll install some msvc redistributables, then click next till it asks you to set a password. This is the password for the default "postgres" super-admin. I set it to "password". 
+
+Then set the port to the default - 5432 (it should be filled in already)
+
+Keep the default locale.
+
+Then click next and it'll install.
+
+Uncheck the "launch stackbuilder" thing, we don't need it. Hit finish.
+
+Now launch pgadmin.
+
+If you see, under "Server Groups > Servers" a listing that says "localhost:5432", then just double-click it and skip to [Skip to here]
+
+If you don't see anything under "Server Groups > Servers", then at the top click "File > Add Server". 
+
+Name: local test
+Host: localhost
+Port: 5432
+Service: leave as-is (blank)
+Maintenance DB: leave as-is (postgres)
+Username: leave as-is (postgres)
+Password: password
+
+Click "store password". Click OK. Click "OK" when they warn about storing your password.
+
+[Skip to here]
+Double-click the server entry to connect to it + expand it. 
+
+Right-click "Login Roles". Select "New Login Role"
+Role name: testrole
+
+Click the "definition" tab. 
+Password: password
+
+Click the "role privileges" tab.
+Check: "superuser" and "can create databases"
+
+Click OK.
+
+Postgresql is now configured.
+
+Now, on to cloning:
+
+Run "Command Prompt with Ruby and Rails"
+
+Clone the repo. cd into it. If you already cloned before this, run "git pull" to make sure you're up to date (I fixed something as I wrote this- the postgres gem needed to be updated).
+
+Run these commands to get around a RubyInstaller issue:
+
+gem sources -r https://rubygems.org/
+gem sources -a http://rubygems.org/
+gem update --system
+gem sources -r http://rubygems.org/
+gem sources -a https://rubygems.org/
+
+Now run:
+bundle install
+
+Enjoy a beverage while a ton of gems are installed from the project's Gemfile. 
+
+Make sure "file" and ImageMagick are installed. Try running "file Gemfile" and make sure it reports that the file is ASCII text. If it instead says it could not find the file command, install this: http://gnuwin32.sourceforge.net/downlinks/file.php
+
+Verify ImageMagick is working correctly. Run:
+
+convert logo: logo.gif
+identify logo.gif
+imdisplay
+rm logo.gif
+
+If ImageMagick is not installed, run http://www.imagemagick.org/download/binaries/ImageMagick-6.9.1-0-Q16-x64-dll.exe
+
+Now, run:
+
+rake db:setup
+
+You'll see a bunch of output ad it makes tables, ignore it all. Unless there are errors, in which case tell me about them.
+
+Finally, run:
+rails server
+
+Now navigate to http://localhost:3000 in your web browser. Try it out! Sign up as a new user, submit an outfit, etc. You're all done and you can ctrl+c the test server. Whenever you want to test changes you made, just run "rails server" again and visit localhost:3000.
