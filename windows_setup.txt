@@ -76,7 +76,7 @@ Now, run:
 
 rake db:setup
 
-You'll see a bunch of output ad it makes tables, ignore it all. Unless there are errors, in which case tell me about them.
+You'll see a bunch of output as it makes tables, ignore it all. Unless there are errors, in which case tell me about them.
 
 Finally, run:
 rails server
