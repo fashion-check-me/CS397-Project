@@ -12,7 +12,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.1'
 # Use postgres as the database for Active Record
-gem 'pg', '~> 0.17.1'
+gem 'pg', '~> 0.18.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
