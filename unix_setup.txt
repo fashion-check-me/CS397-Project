@@ -1,0 +1,58 @@
+Install these from your distribution's repos:
+git
+ImageMagick
+Ruby 2.1+
+Rails 4.0+
+postgresql
+postgresql-dev (the development headers)
+curl
+
+Consider using "rvm" to get the newest ruby if your distro doesn't ship 2.1+. 
+These commands will install Ruby and Rails:
+
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+    \curl -sSL https://get.rvm.io | bash -s stable --rails
+
+Now, initialize postgres:
+
+sudo su postgres
+createuser --interactive
+
+"createuser" will prompt you for some information.
+username: testrole
+make the user a superuser
+
+Now, edit either
+/etc/postgresql/9.4/main/pg_hba.conf
+or
+/etc/postgresql/9.3/main/pg_hba.conf
+
+(whichever exists)
+
+so that it contains only these lines:
+local   all             postgres                                peer
+local   all             all                                     trust
+host    all             all             127.0.0.1/32            trust
+host    all             all             ::1/128                 trust
+
+RESTART POSTGRESQL HERE
+
+Now, clone the repository and cd into the folder
+git clone git@github.com:fashion-check-me/CS397-Project.git
+cd CS397-Project
+
+If it says you're not authorized, check this guide: https://help.github.com/articles/generating-ssh-keys/
+
+Now run:
+bundle install
+This will install a bunch of gems.
+
+Then run:
+rake db:setup
+This sets up the database.
+
+Finally, run:
+
+rails server
+
+and go to http://localhost:3000 in your browser. Try making an account and uploading a picture!
