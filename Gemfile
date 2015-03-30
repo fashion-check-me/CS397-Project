@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # devise for user support
 gem 'devise'
 
+gem 'coffee-script-source', '1.8.0'
+
 # paperclip for image handling
 gem "paperclip", '~> 4.2'
 
