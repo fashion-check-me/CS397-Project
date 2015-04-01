@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <h3><%= @outfit.name %></h3>
-    <h5><%= @owner.email %></h5>
+    <h5><%= link_to @owner.username, user_profile_path(@owner.username) %></h5>
   </div>
 
   <% if @user_is_owner %>
