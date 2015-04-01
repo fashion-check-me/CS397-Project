@@ -1,13 +1,16 @@
-<h1><%= @user.username %>'s Profile</h1>
 
+<div class="container">
+<h1 class="row"><%= @user.username %>'s Profile</h1>
 <% @outfits.each do |o| %>
-<div>
-  <h2><%= link_to o.name, outfit_path(o) %></h2>
-  <h3><%= o.gender %></h3>
-  <h3><%= o.created_at %></h3>
-  <p><%= o.description %></p>
-  <%= image_tag o.image.url(:thumb) %>
+<div class="row well">
+  <%= image_tag o.image.url(:medium), class: "col-md-2" %>
+  <div class="col-md-3">
+    <h2><%= link_to o.name, outfit_path(o) %></h2>
+    <h3><%= o.gender %></h3>
+  </div>
+  <p class="col-lg-5"><%= o.description %></p>
 </div>
 <% end %>
+</div>
 
 
