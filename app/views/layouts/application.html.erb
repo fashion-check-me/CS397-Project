@@ -29,7 +29,7 @@
             <li class="<%= 'active' if current_page?(outfits_path) %>"> <%= link_to 'Outfits', outfits_path, :class => 'navbar-link'  %></li>
             <% if user_signed_in? %>
               <li class="<%= 'active' if current_page?(new_outfit_path) %>"> <%= link_to 'New Outfit', new_outfit_path, :class => 'navbar-link'  %></li>
-              <li><%= link_to "My Profile", user_profile_path(current_user.username) %></li>
+              <li><%= link_to "#{current_user.username.humanize}'s Profile", user_profile_path(current_user.username) %></li>
               <li> <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => 'navbar-link' %> </li>
             <% else %>
               <li class="<%= 'active' if current_page?(new_user_session_path) %>"> <%= link_to 'Login', new_user_session_path, :class => 'navbar-link'  %></li>
