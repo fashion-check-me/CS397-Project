@@ -2,6 +2,8 @@ class Outfit < ActiveRecord::Base
   # Validate these exist before creating
   validates :description, :image, :name, presence: true
 
+  has_many :tags, dependent: :destroy
+
   # This method associates the attribute ":image" with a file attachment
 	# '>' specifies resize option for imagemagick
   has_attached_file :image, styles: { medium: "800x800>", thumb: "100x100>" }
