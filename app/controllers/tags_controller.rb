@@ -10,6 +10,10 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.new(tag_params)
+    @tag.brand.downcase!
+    @tag.pattern.downcase!
+    @tag.color.downcase!
+    @tag.category.downcase!
 
     outfit = Outfit.find(@tag.outfitid)
     if (outfit.userid != current_user.id)
