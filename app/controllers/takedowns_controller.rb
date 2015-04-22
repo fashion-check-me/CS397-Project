@@ -15,9 +15,14 @@ class TakedownsController < ApplicationController
 
   def create
     @takedown = Takedown.new(safe_params)
- 
-    @takedown.save
-    redirect_to @takedown
+    
+    begin
+      @takedown.save!
+      redirect_to @takedown, notice: 'Request submitted.'
+    rescue => e
+      flash.alert = "Error creating request. #{e}"
+      render action: 'new'
+    end
   end
 
   def destroy

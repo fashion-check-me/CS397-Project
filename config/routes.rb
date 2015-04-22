@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :tags
   resources :takedowns
+  resources :comments
   resources :outfits
   get 'outfits/:id/upvote' => 'outfits#vote_up', as: 'outfit_vote_up'
   get 'outfits/:id/downvote' => 'outfits#vote_down', as: 'outfit_vote_down'

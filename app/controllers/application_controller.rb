@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :username
   end
+
+  def render_401!
+    render :file => "public/401", :status => :unauthorized
+  end
 end

@@ -10,6 +10,7 @@ class OutfitsController < ApplicationController
     @owner = User.find(@outfit.userid)
     @tags = Tag.where(outfitid: @outfit.id)
     @user_is_owner = user_signed_in? && @owner.id == current_user.id
+    @comments = Comment.where(outfitid: @outfit.id).order(:created_at)
   end
 
   def create
@@ -56,7 +57,7 @@ class OutfitsController < ApplicationController
       @outfit.destroy
       redirect_to outfits_path
     else
-      render :file => "public/401", :status => :unauthorized
+      render_401!
     end
   end
 

@@ -1,0 +1,8 @@
+<div class="row well">
+  <div class="row">
+    <span><%= link_to comment.user.username, user_profile_path(comment.user.username) %></span>
+    <span><%= comment.created_at %></span>
+    <span><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Really delete comment?'} %></span>
+  </div>
+  <p class="row"><%= comment.content %></p>
+</div>
