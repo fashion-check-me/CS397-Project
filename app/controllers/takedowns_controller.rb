@@ -33,10 +33,4 @@ class TakedownsController < ApplicationController
   def safe_params
     params.require(:takedown).permit(:url, :description, :claimant)
   end
-
-  def require_admin!
-    unless current_user.is_admin?
-      render :file => "public/401", :status => :unauthorized
-    end
-  end
 end

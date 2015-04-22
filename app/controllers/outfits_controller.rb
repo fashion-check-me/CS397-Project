@@ -50,6 +50,13 @@ class OutfitsController < ApplicationController
     redirect_to @outfit
   end
 
+  def report
+    @outfit = Outfit.find(params[:id])
+    @outfit.update reported: true
+    flash.notice = "Outfit reported."
+    redirect_to @outfit
+  end
+
   def destroy
     @outfit = Outfit.find(params[:id])
 

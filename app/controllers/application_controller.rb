@@ -12,4 +12,10 @@ class ApplicationController < ActionController::Base
   def render_401!
     render :file => "public/401", :status => :unauthorized
   end
+
+  def require_admin!
+    unless current_user.is_admin?
+      render :file => "public/401", :status => :unauthorized
+    end
+  end
 end

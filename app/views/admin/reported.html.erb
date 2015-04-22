@@ -1,0 +1,6 @@
+<div class="container">
+  <% @reported_outfits.each do |o| %>
+    <div><%= link_to "Clear", unflag_outfit_path(o.id), method: :put %></div>
+    <%= render o %>
+  <% end %>
+</div>

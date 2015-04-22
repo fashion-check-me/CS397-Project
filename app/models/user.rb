@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   acts_as_voter
 
   def is_admin?
-    @group == "admin"
+    group == "admin"
   end
 end

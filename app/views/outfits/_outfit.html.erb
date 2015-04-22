@@ -1,0 +1,8 @@
+<div class="row well">
+  <%= image_tag outfit.image.url(:medium), class: "col-md-2" %>
+  <div class="col-md-3">
+    <h2><%= link_to outfit.name, outfit_path(outfit) %></h2>
+    <h3><%= outfit.gender %></h3>
+  </div>
+  <p class="col-lg-5"><%= outfit.description %></p>
+</div>

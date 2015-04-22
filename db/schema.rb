@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422182038) do
+ActiveRecord::Schema.define(version: 20150422201037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150422182038) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "userid",                                null: false
+    t.integer  "userid",                                  null: false
     t.text     "description"
     t.text     "name"
     t.text     "gender"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150422182038) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.boolean  "reported",                default: false
   end
 
   add_index "outfits", ["cached_votes_down"], name: "index_outfits_on_cached_votes_down", using: :btree
