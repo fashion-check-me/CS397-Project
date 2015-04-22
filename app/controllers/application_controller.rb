@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin!
-    unless current_user.is_admin?
+    unless user_signed_in? && current_user.is_admin?
       render :file => "public/401", :status => :unauthorized
     end
   end

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   put 'outfits/:id/downvote' => 'outfits#vote_down', as: 'outfit_vote_down'
   put 'outfits/:id/report' => 'outfits#report', as: 'outfit_report'
 
+  get 'admin' => 'admin#index', as: 'admin'
   get 'admin/reported' => 'admin#reported', as: 'review_reported'
   put 'admin/unflag/:id' => 'admin#unflag', as: 'unflag_outfit'
   # Example of regular route:

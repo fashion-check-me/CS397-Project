@@ -2,6 +2,9 @@ class AdminController < ApplicationController
   before_action :authenticate_user!
   before_action :require_admin!
 
+  def index
+  end
+
   def reported
     @reported_outfits = Outfit.where(reported: true)
   end
