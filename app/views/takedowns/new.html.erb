@@ -1,0 +1,36 @@
+<%= form_for :takedown, :url => takedowns_path do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-3">
+      <h3>URL</h3>
+      <p>The URL that you believe is infringing upon your copyrights.</p>
+      <div class="field">
+        <%= f.text_field :url, :class => "form-control" %> 
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 col-md-offset-3">
+      <h3>Description</h3>
+      <p>Please provide your formal request below.</p>
+      <div class="field">
+        <%= f.text_area :description, :class => "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 col-md-offset-3">
+      <h3>Claimant</h3>
+      <p>Please provide identification + contact informational for the claimant filing this request.</p>
+      <div class="field">
+        <%= f.text_area :claimant, :class => "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 col-md-offset-3">
+      <%= f.submit "Submit", :class => "btn btn-lg" %>
+    </div>
+  </div>
+</div>
+<% end %>

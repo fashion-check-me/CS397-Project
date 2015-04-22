@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/search', to: 'search#index'
 
   resources :tags
-
+  resources :takedowns
   resources :outfits
   get 'outfits/:id/upvote' => 'outfits#vote_up', as: 'outfit_vote_up'
   get 'outfits/:id/downvote' => 'outfits#vote_down', as: 'outfit_vote_down'

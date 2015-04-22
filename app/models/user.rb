@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   acts_as_voter
+
+  def is_admin?
+    @group == "admin"
+  end
 end
