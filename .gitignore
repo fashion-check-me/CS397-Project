@@ -20,3 +20,7 @@
 
 #ignore system images
 /public/system
+
+# ignore certificates
+/certs
+
