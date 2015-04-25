@@ -60,7 +60,7 @@ class OutfitsController < ApplicationController
   def destroy
     @outfit = Outfit.find(params[:id])
 
-    if current_user.id == @outfit.userid
+    if current_user.id == @outfit.userid || current_user.is_admin?
       @outfit.destroy
       redirect_to outfits_path
     else

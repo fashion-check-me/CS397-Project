@@ -30,7 +30,7 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     @outfit = Outfit.find(@tag.outfitid)
     
-    if @outfit.userid == current_user.id
+    if @outfit.userid == current_user.id || current_user.is_admin?
       @tag.destroy
       redirect_to @outfit
     else
