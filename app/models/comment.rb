@@ -5,4 +5,8 @@ class Comment < ActiveRecord::Base
   def user
     User.find(userid)
   end
+
+  def owned_by? user
+    userid == user.id
+  end
 end
